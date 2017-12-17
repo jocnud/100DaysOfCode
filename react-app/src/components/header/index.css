@@ -1,0 +1,12 @@
+.ui.grid.headerStack{
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.AppHeader .headerStack h2{
+  margin-top: 1.5em;
+}
+
+.AppHeader .headerStack h5{
+  margin-top: 1.0em;
+}
