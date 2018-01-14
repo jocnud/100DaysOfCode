@@ -42,4 +42,24 @@ public class StringUtils {
 
 		return charFrequency;
 	}
+
+	public boolean isAnagram(String str) {
+		if (isBlank(str) || isBlank(input))
+			return false;
+
+		if (str.length() != input.length())
+			return false;
+
+		char charArr[] = input.toLowerCase().toCharArray();
+		for (char c : charArr) {
+			if (str.toLowerCase().indexOf(c) == -1)
+				return false;
+		}
+
+		return true;
+	}
+
+	private boolean isBlank(String str) {
+		return str == null || str.equals("");
+	}
 }
