@@ -8,6 +8,19 @@
 	<name>strings</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
+
+		<!-- <dependency> <groupId>es.usc.citius.hipster</groupId> <artifactId>hipster-core</artifactId> 
+			<version>1.0.1</version> </dependency> -->
+
+		<!-- <dependency> <groupId>org.jgrapht</groupId> <artifactId>jgrapht-core</artifactId> 
+			<version>1.1.0</version> </dependency> -->
+
+
+		<dependency>
+			<groupId>org.psjava</groupId>
+			<artifactId>psjava</artifactId>
+			<version>0.1.19</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

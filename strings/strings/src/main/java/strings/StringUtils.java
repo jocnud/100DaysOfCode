@@ -59,6 +59,22 @@ public class StringUtils {
 		return true;
 	}
 
+	private String recursiveReverse(String result, String left) {
+		if (left.length() == 0)
+			return result;
+		return recursiveReverse(result + left.charAt(left.length() - 1), left.substring(0, left.length() - 1));
+	}
+
+	public String reverse() {
+		if (isBlank(input))
+			return "";
+		if (input.length() == 1)
+			return input;
+
+		return recursiveReverse("", input);
+
+	}
+
 	private boolean isBlank(String str) {
 		return str == null || str.equals("");
 	}
