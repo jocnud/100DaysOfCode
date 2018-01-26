@@ -12,6 +12,35 @@ public class StringUtils {
 		this.input = input;
 	}
 
+	public boolean isIsomorphic(String str) {
+
+		if (isBlank(str) || isBlank(str))
+			return false;
+		if (str.length() != input.length())
+			return false;
+
+		Map<Character, Character> map = new HashMap<Character, Character>();
+
+		for (int i = 0; i < str.length(); i++) {
+
+			char givenChar = str.charAt(i);
+			char inputChar = input.charAt(i);
+
+			if (map.containsKey(givenChar)) {
+				if (map.get(givenChar) != inputChar)
+					return false;
+			}
+
+			map.put(givenChar, inputChar);
+		}
+
+		return true;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
 	public String findDuplicates() {
 
 		if (input == null || input.equals(EMPTY_STRING))
@@ -30,6 +59,11 @@ public class StringUtils {
 		return resultBuilder.toString();
 	}
 
+	/**
+	 * 
+	 * @param input
+	 * @return
+	 */
 	public Map<Character, Integer> getCharFrequency(String input) {
 
 		Map<Character, Integer> charFrequency = new HashMap<Character, Integer>();
@@ -43,6 +77,11 @@ public class StringUtils {
 		return charFrequency;
 	}
 
+	/**
+	 * 
+	 * @param str
+	 * @return
+	 */
 	public boolean isAnagram(String str) {
 		if (isBlank(str) || isBlank(input))
 			return false;
@@ -59,12 +98,10 @@ public class StringUtils {
 		return true;
 	}
 
-	private String recursiveReverse(String result, String left) {
-		if (left.length() == 0)
-			return result;
-		return recursiveReverse(result + left.charAt(left.length() - 1), left.substring(0, left.length() - 1));
-	}
-
+	/**
+	 * 
+	 * @return
+	 */
 	public String reverse() {
 		if (isBlank(input))
 			return "";
@@ -73,6 +110,12 @@ public class StringUtils {
 
 		return recursiveReverse("", input);
 
+	}
+
+	private String recursiveReverse(String result, String left) {
+		if (left.length() == 0)
+			return result;
+		return recursiveReverse(result + left.charAt(left.length() - 1), left.substring(0, left.length() - 1));
 	}
 
 	private boolean isBlank(String str) {
